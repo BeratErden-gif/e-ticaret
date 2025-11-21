@@ -1,0 +1,205 @@
+.addresses-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+}
+
+.addresses-sidebar {
+  width: 280px;
+  padding-right: 40px;
+}
+
+.addresses-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.sidebar-menu-item.active {
+  background: #f4f4f4;
+  color: #000;
+}
+
+.addresses-content {
+  flex: 1;
+}
+
+.addresses-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.addresses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addresses-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addresses-count {
+  color: #666;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.add-address-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.add-address-button:hover {
+  background: #f8f8f8;
+}
+
+.address-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.address-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+
+.address-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.address-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.address-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.address-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.address-action:hover {
+  color: #000;
+}
+
+.form-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.no-address-message {
+  background: #f0e7ff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.phone-input {
+  display: flex;
+  gap: 10px;
+}
+
+.phone-input select {
+  width: 120px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+.save-button {
+  background: #000;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  float: right;
+}

@@ -1,0 +1,136 @@
+.footer {
+  background: #111827;
+  color: #D1D5DB;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 24px 24px 180px;
+}
+
+/* ---- Top area: 3 → 2 → 1 sütun ---- */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Kolonlar dikey akışta kalsın */
+.footer-column {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+}
+
+/* Logo */
+.footer-logo {
+  width: auto;
+  height: 24px;
+  margin-bottom: 10px;
+}
+
+/* Desktop Başlıklar */
+.footer-heading-desktop {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+}
+
+.footer-column h3 {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+}
+
+/* Link listeleri */
+.footer-links,
+.footer-column ul {
+  position: static;
+  height: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Linkler */
+.footer-links li a,
+.footer-column ul li a {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: #D1D5DB;
+  text-decoration: none;
+  transition: color .2s ease;
+  display: inline-block;
+  padding: 0;
+}
+
+.footer-links li a:hover,
+.footer-column ul li a:hover {
+  color: #FFFFFF;
+}
+
+/* ---- Bottom line ---- */
+.footer-bottom {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: left;
+}
+
+.copyright-text {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: #9CA3AF;
+  margin: 0;
+}
+
+/* ---- Tablet (<=1024px): 2 sütun ---- */
+@media (max-width: 1024px) {
+  .footer-content {
+    padding: 24px 24px;
+  }
+  .footer-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+/* ---- Mobil (<=768px): 1 sütun ---- */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 20px 16px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-column {
+    align-items: flex-start;
+  }
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+}

@@ -1,0 +1,111 @@
+.account-info-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.account-info-sidebar {
+  width: 250px;
+  margin-right: 40px;
+}
+
+.account-info-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar-menu-item.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.account-info-content {
+  flex: 1;
+}
+
+.account-info-form {
+  max-width: 600px;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #f8f8f8;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #000;
+  background: #fff;
+}
+
+.phone-input {
+  display: flex;
+  gap: 10px;
+}
+
+.phone-input select {
+  width: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f8f8;
+  font-size: 14px;
+}
+
+.phone-input input {
+  flex: 1;
+}
+
+.save-button {
+  padding: 12px 30px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-button:hover {
+  opacity: 0.9;
+}
+
+

@@ -1,0 +1,101 @@
+.protein-header {
+  padding: 20px;
+  background: white;
+}
+
+.protein-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.protein-logo {
+  height: 40px;
+  cursor: pointer;
+  display: block;
+}
+
+.protein-header-content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.protein-search {
+  flex: 1;
+  max-width: 600px;
+  margin: 0 40px;
+  display: flex;
+}
+
+.protein-search input {
+  flex: 1;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.protein-search button {
+  padding: 10px 30px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-weight: 500;
+}
+
+.protein-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.protein-account,
+.protein-cart {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-weight: 500;
+}
+
+.protein-cart {
+  position: relative;
+}
+
+.protein-cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.protein-nav {
+  background: black;
+  padding: 15px 20px;
+}
+
+.protein-nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 150px;
+  justify-content: center;
+}
+
+.protein-nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}

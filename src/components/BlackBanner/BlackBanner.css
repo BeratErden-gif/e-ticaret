@@ -1,0 +1,138 @@
+.black-banner {
+  width: 100%;
+  background: #222222;
+  padding: 40px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .black-banner {
+    padding: 32px 16px;
+    text-align: left;
+  }
+  
+  .banner-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .banner-left {
+    max-width: 100%;
+  }
+
+  .rating-group {
+    margin-bottom: 12px;
+  }
+
+  .stars svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rating-count {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+
+  .banner-title {
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+  }
+
+  .banner-description {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-left: 0;
+    margin-bottom: 32px;
+  }
+
+  .footer-toggle {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 12px 0;
+    margin-top: 8px;
+  }
+}
+
+.banner-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .banner-content {
+    width: 100%;
+    max-width: 390px;
+    padding: 0;
+  }
+}
+
+.banner-left {
+  max-width: 523px;
+}
+
+.rating-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.stars svg {
+  width: 28px;
+  height: 28px;
+}
+
+.rating-count {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 15.75px;
+  line-height: 21.6px;
+  color: #FFFFFF;
+}
+
+.banner-title {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 31.17px;
+  line-height: 42.7px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.banner-description {
+  max-width: 462.48px;
+  font-family: 'Inter';
+  font-weight: 300;
+  font-size: 20.31px;
+  line-height: 37.5px;
+  color: #FFFFFF;
+  margin-left: 86.99px;
+  white-space: pre-line;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .black-banner { padding: 28px 16px; }
+  .banner-content { width: 100%; max-width: 390px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .banner-left { max-width: 100%; }
+  .banner-title { font-size: 22px; line-height: 30px; letter-spacing: 1px; }
+  .banner-description { margin-left: 0; max-width: 100%; font-size: 14.625px; line-height: 27px; }
+  .stars svg { width: 20px; height: 20px; }
+}
+
+/* responsive değişiklikler geri alındı */

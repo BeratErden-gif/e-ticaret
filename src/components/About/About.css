@@ -1,0 +1,230 @@
+/* GENEL */
+.about-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.customer-count {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+/* SERTİFİKALAR */
+.certificates-section {
+  margin-top: 60px;
+  text-align: center;
+}
+.certificates-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+.certificate-img {
+  max-width: 140px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.certificate-img:hover { transform: scale(1.08); }
+
+/* YORUMLAR - geniş (sağa uzayan) görünüm */
+.reviews-section {
+  margin: 60px auto 20px;
+  max-width: 1200px;              /* container genişliği */
+  padding: 0 10px;
+}
+.reviews-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* üst satır */
+.reviews-topbar {
+  max-width: 1100px;              /* kart genişliğine yakın */
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.reviews-starsline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stars-big {
+  font-size: 18px;
+  color: #f5c518;
+  letter-spacing: 1px;
+}
+.reviews-count {
+  font-size: 13px;
+  color: #6b7280;
+}
+.reviews-outline-btn {
+  margin-left: 12px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* liste ve kart */
+.reviews-list {
+  max-width: 1100px;              /* kartın yatay genişliği */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.review-card.wide {
+  width: 100%;                    /* tam genişlik */
+  background: #f9f9f9;
+  border: 1px solid #ededed;
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+/* kart içi */
+.review-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.stars { color: #f5c518; font-size: 16px; letter-spacing: 1px; }
+.review-author { font-weight: 700; }
+.verified {
+  background: #d9f5df;
+  color: #287c3f;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.review-date {
+  margin-left: auto;
+  font-size: 12px;
+  color: #6b7280;
+}
+.review-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 6px 0 8px;
+}
+.review-text { font-size: 14px; color: #333; margin-bottom: 10px; }
+.review-product { font-size: 12px; color: #8b8b8b; }
+
+/* sayfalama */
+.reviews-pagination {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+.pag-ctl, .pag-num {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #4b5563;
+}
+.pag-num.active {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* FOOTER */
+.protein-page-footer {
+  background: #000;
+  padding: 60px 0 20px;
+  margin-top: 80px;
+}
+
+.protein-page-footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.protein-page-footer-column h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.protein-page-footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.protein-page-footer-links li {
+  margin-bottom: 12px;
+}
+
+.protein-page-footer-links a {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.protein-page-footer-links a:hover {
+  color: #fff;
+}
+
+.protein-page-footer-copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  color: #999;
+  font-size: 14px;
+}
+
+/* responsive dokunuşlar */
+@media (max-width: 640px) {
+  .reviews-list, .reviews-topbar, .reviews-pagination { max-width: 100%; }
+  .review-card.wide { padding: 16px; }
+  .review-title { font-size: 16px; }
+  
+  .protein-page-footer-content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}

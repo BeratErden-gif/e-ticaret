@@ -1,0 +1,110 @@
+.category-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2.5 / 1;
+}
+
+.category-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 66%;
+  height: 100%;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-title {
+  position: absolute;
+  right: 30px;
+  top: 28px;
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: right;
+  color: #000;
+  margin: 0;
+  width: 180px;
+  white-space: pre-line;
+  -webkit-font-smoothing: antialiased;
+  z-index: 1;
+}
+
+/* İki satırlı başlıklar için özel stil */
+.category-card:nth-child(2) .category-title,
+.category-card:nth-child(4) .category-title,
+.category-card:last-child .category-title {
+  font-size: 26px;
+  top: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Tek satırlı başlıklar için özel stil */
+.category-card:nth-child(1) .category-title,
+.category-card:nth-child(3) .category-title,
+.category-card:nth-child(5) .category-title {
+  top: 38px;
+}
+
+/* TÜM ÜRÜNLER kartı için özel stil */
+.category-card:last-child .category-image {
+  width: 294px;
+  height: 158px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.category-card:last-child .category-image img {
+  width: 110px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -10px;
+}
+
+.category-button {
+  position: absolute;
+  right: 21.36px;
+  bottom: 16px;
+  width: 120px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 14px;
+  line-height: 1.77;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1px;
+  z-index: 2;
+}
+
+.category-button:hover {
+  background-color: #222;
+}
+
+/* En küçük mobil ekranlarda çakışmayı önle */
+@media (max-width: 360px) {
+  .category-image { width: 58%; }
+  .category-title { font-size: 22px; right: 20px; top: 18px; width: 150px; }
+  .category-card:nth-child(2) .category-title,
+  .category-card:nth-child(4) .category-title,
+  .category-card:last-child .category-title { font-size: 20px; top: 14px; }
+  .category-button { width: 104px; height: 28px; font-size: 12.5px; right: 14px; bottom: 10px; }
+}
