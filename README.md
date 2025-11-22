@@ -1,70 +1,199 @@
-# React + TypeScript + Vite
+# OJS Nutrition E-Ticaret Sitesi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern ve kullanıcı dostu bir spor gıdaları e-ticaret platformu. React, TypeScript ve Vite ile geliştirilmiştir.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Genel Özellikler
+- **Responsive Tasarım**: Mobil, tablet ve masaüstü cihazlarda mükemmel görünüm
+- **Modern UI/UX**: Kullanıcı dostu arayüz ve navigasyon
+- **Hızlı Performans**: Vite ile optimize edilmiş build ve geliştirme süreci
+- **Type Safety**: TypeScript ile tip güvenliği
 
-## Expanding the ESLint configuration
+### Kullanıcı Özellikleri
+- **Ürün Kataloğu**: Kategorilere göre filtrelenebilir ürün listesi
+- **Ürün Detay**: Detaylı ürün bilgileri, görseller ve yorumlar
+- **Sepet Yönetimi**: Dinamik sepet işlemleri (ekleme, çıkarma, güncelleme)
+- **Kullanıcı Hesabı**: Hesap bilgileri yönetimi
+- **Adres Yönetimi**: Birden fazla teslimat adresi ekleme ve düzenleme
+- **Sipariş Takibi**: Geçmiş siparişleri görüntüleme ve detaylarını inceleme
+- **Ödeme Sayfası**: Güvenli ödeme işlem akışı
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Sayfalar
+- Ana Sayfa (Home)
+- Ürün Listesi (Protein)
+- Ürün Detay
+- Sepet (Cart Sidebar)
+- Hesap Yönetimi
+  - Hesap Bilgilerim
+  - Siparişlerim
+  - Adreslerim
+- Ödeme (Checkout)
+- Sipariş Detay
+- Hakkımızda
+- İletişim
+- SSS (Sıkça Sorulan Sorular)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Teknolojiler
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React 19.1.1**: Modern React özellikleri ile component tabanlı mimari
+- **TypeScript 5.8.3**: Tip güvenliği ve daha iyi geliştirici deneyimi
+- **Vite 7.1.0**: Hızlı build aracı ve geliştirme sunucusu
+- **React Router DOM 6.30.1**: Client-side routing
+- **React Icons 5.5.0**: İkon kütüphanesi
+- **Tailwind CSS 4.1.11**: Utility-first CSS framework
+- **ESLint**: Kod kalitesi ve tutarlılığı
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Kurulum
+
+### Gereksinimler
+- Node.js 18.x veya üzeri
+- npm veya yarn
+
+### Adımlar
+
+1. Projeyi klonlayın:
+```bash
+git clone https://github.com/BeratErden-gif/e-ticaret.git
+cd e-ticaret-sitesi
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
 ```
-# e-ticaret
+
+3. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
+
+4. Tarayıcınızda açın:
+```
+http://localhost:5173
+```
+
+## Komutlar
+
+```bash
+# Geliştirme sunucusunu başlat
+npm run dev
+
+# Production build oluştur
+npm run build
+
+# Linting kontrolü
+npm run lint
+
+# Production build'i önizle
+npm run preview
+```
+
+## Proje Yapısı
+
+```
+e-ticaret-sitesi/
+├── src/
+│   ├── assets/              # Görseller ve statik dosyalar
+│   ├── components/          # React componentleri
+│   │   ├── About/          # Hakkımızda sayfası
+│   │   ├── Account/        # Hesap sayfası
+│   │   ├── AccountInfo/    # Hesap bilgileri
+│   │   ├── Addresses/      # Adres yönetimi
+│   │   ├── BestSellers/    # En çok satanlar
+│   │   ├── BlackBanner/    # Banner component
+│   │   ├── Cart/           # Sepet sidebar
+│   │   ├── CategoryCard/   # Kategori kartları
+│   │   ├── Checkout/       # Ödeme sayfası
+│   │   ├── Contact/        # İletişim sayfası
+│   │   ├── FAQ/            # SSS sayfası
+│   │   ├── Footer/         # Footer component
+│   │   ├── Header/         # Header component
+│   │   ├── InfoBar/        # Bilgi çubuğu
+│   │   ├── MiddleBanner/   # Orta banner
+│   │   ├── OrderDetail/    # Sipariş detay
+│   │   ├── Orders/         # Siparişler
+│   │   ├── ProductDetail/  # Ürün detay
+│   │   ├── Protein/        # Protein listesi
+│   │   └── Reviews/        # Yorumlar
+│   ├── App.tsx             # Ana uygulama component
+│   ├── main.tsx            # Giriş noktası
+│   └── index.css           # Global stiller
+├── public/                  # Statik dosyalar
+├── package.json            # Proje bağımlılıkları
+├── tsconfig.json           # TypeScript yapılandırması
+├── vite.config.ts          # Vite yapılandırması
+└── README.md               # Bu dosya
+```
+
+## Özellik Detayları
+
+### Responsive Tasarım
+- Mobil öncelikli tasarım yaklaşımı
+- Hamburger menü ile mobil navigasyon
+- Tüm sayfalarda tablet ve mobil optimizasyonu
+- Esnek grid ve flexbox düzenleri
+
+### Sepet Sistemi
+- Sidebar olarak açılır sepet
+- Ürün ekleme/çıkarma
+- Miktar güncelleme
+- Toplam fiyat hesaplama
+- Sepet ürün sayısı göstergesi
+
+### Kullanıcı Yönetimi
+- Giriş/Kayıt formu
+- Hesap bilgileri düzenleme
+- Şifre değiştirme
+- Çıkış yapma
+
+### Sipariş Yönetimi
+- Sipariş geçmişi listeleme
+- Sipariş durumu takibi
+- Sipariş detaylarını görüntüleme
+- Sipariş özeti ve fatura bilgileri
+
+## Geliştirme
+
+### Kod Standardı
+- ESLint kurallarına uygun kod yazımı
+- TypeScript tip tanımlamaları
+- Component bazlı mimari
+- CSS modülleri ile stil izolasyonu
+
+### Git Workflow
+```bash
+# Yeni özellik için branch oluştur
+git checkout -b feature/ozellik-adi
+
+# Değişiklikleri commit et
+git add .
+git commit -m "feat: yeni özellik açıklaması"
+
+# Ana branch'e push et
+git push origin main
+```
+
+## Lisans
+
+Bu proje eğitim amaçlı geliştirilmiştir.
+
+## İletişim
+
+Proje Sahibi: Berat Erden
+GitHub: [@BeratErden-gif](https://github.com/BeratErden-gif)
+
+## Ekran Görüntüleri
+
+Proje aşağıdaki sayfa ve özellikleri içermektedir:
+- Ana sayfa ile kategori kartları ve en çok satanlar
+- Ürün detay sayfası ile zoom özelliği
+- Responsive header ve mobil menü
+- Sepet yönetimi sidebar
+- Kullanıcı hesap paneli
+- Sipariş takip sistemi
+- Modern ve minimalist tasarım
+
+---
+
+Made with ❤️ using React + TypeScript + Vite
