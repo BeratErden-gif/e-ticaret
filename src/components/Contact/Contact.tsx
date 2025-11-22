@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
+import "../Header/Header.css";
 import logo from "../../assets/logo.svg";
 import CartSidebar from "../Cart/CartSidebar";
 import InfoBar from "../InfoBar/InfoBar";
+import Footer from "../Footer/Footer";
 
 const navLinks = [
   "PROTEİN",
@@ -16,6 +18,7 @@ const navLinks = [
 
 const Contact: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
@@ -23,6 +26,15 @@ const Contact: React.FC = () => {
       {/* Header */}
       <header className="protein-header">
         <div className="protein-header-content">
+          <button
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Menü"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
             <img src={logo} alt="OJS Nutrition" className="protein-logo" />
           </div>
@@ -31,12 +43,17 @@ const Contact: React.FC = () => {
             <button type="submit">ARA</button>
           </form>
           <div className="protein-actions">
-            <button className="protein-account">HESAP</button>
+            <a href="/account" className="protein-account">HESAP</a>
             <button
               className="protein-cart"
               onClick={() => setIsCartOpen(true)}
             >
-              SEPET
+              <svg className="cart-icon" viewBox="0 0 24 24" fill="none" stroke="#4169e1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              <span className="cart-text">SEPET</span>
               <span className="protein-cart-count">0</span>
             </button>
             <CartSidebar
@@ -47,6 +64,39 @@ const Contact: React.FC = () => {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <img src={logo} alt="OJS Nutrition" className="protein-logo" />
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Kapat"
+          >
+            ×
+          </button>
+        </div>
+        <div className="mobile-menu-links">
+          <a href="/protein" onClick={() => setIsMobileMenuOpen(false)}>PROTEİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SPOR GIDALARI</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SAĞLIK</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>GIDA</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>VİTAMİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>TÜM ÜRÜNLER</a>
+        </div>
+        <div className="mobile-menu-bottom">
+          <a href="/account" onClick={() => setIsMobileMenuOpen(false)}>HESABIM</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>MÜŞTERİ YORUMLARI</a>
+          <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>İLETİŞİM</a>
+        </div>
+      </div>
 
       {/* Navigation */}
       <nav className="protein-nav">
@@ -60,6 +110,13 @@ const Contact: React.FC = () => {
       </nav>
 
       <InfoBar />
+
+      {/* Mobile Search */}
+      <div className="mobile-search-container">
+        <div className="mobile-search">
+          <input type="text" placeholder="Aradığınız ürünü yazınız" />
+        </div>
+      </div>
 
       {/* Contact Form */}
       <div className="contact-form">
@@ -102,112 +159,8 @@ const Contact: React.FC = () => {
         <p>09:00-17:00 arasında dönüş sağlanmaktadır.</p>
       </div>
 
-      {/* Protein sayfası özel footer */}
-      <footer className="protein-page-footer">
-        <div className="protein-page-footer-content">
-          <div className="protein-page-footer-column">
-            <h3>İletişim</h3>
-            <ul className="protein-page-footer-links">
-              <li>
-                <a href="#">İletişim</a>
-              </li>
-              <li>
-                <a href="#">Hakkımızda</a>
-              </li>
-              <li>
-                <a href="#">Sıkça Sorulan Sorular</a>
-              </li>
-              <li>
-                <a href="#">KVKK</a>
-              </li>
-              <li>
-                <a href="#">Çalışma İlkelerimiz</a>
-              </li>
-              <li>
-                <a href="#">Satış Sözleşmesi</a>
-              </li>
-              <li>
-                <a href="#">Garanti ve İade Koşulları</a>
-              </li>
-              <li>
-                <a href="#">Gerçek Müşteri Yorumları</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="protein-page-footer-column">
-            <h3>Kategoriler</h3>
-            <ul className="protein-page-footer-links">
-              <li>
-                <a href="#">Protein</a>
-              </li>
-              <li>
-                <a href="#">Spor Gıdaları</a>
-              </li>
-              <li>
-                <a href="#">Sağlık</a>
-              </li>
-              <li>
-                <a href="#">Gıda</a>
-              </li>
-              <li>
-                <a href="#">Vitamin</a>
-              </li>
-              <li>
-                <a href="#">Aksesuar</a>
-              </li>
-              <li>
-                <a href="#">Tüm Ürünler</a>
-              </li>
-              <li>
-                <a href="#">Paketler</a>
-              </li>
-              <li>
-                <a href="#">Lansmana Özel Fırsatlar</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="protein-page-footer-column">
-            <h3>Popüler Ürünler</h3>
-            <ul className="protein-page-footer-links">
-              <li>
-                <a href="#">Whey Protein</a>
-              </li>
-              <li>
-                <a href="#">Cream of Rice</a>
-              </li>
-              <li>
-                <a href="#">Creatine</a>
-              </li>
-              <li>
-                <a href="#">BCAA+</a>
-              </li>
-              <li>
-                <a href="#">Pre-Workout</a>
-              </li>
-              <li>
-                <a href="#">Fitness Paketi</a>
-              </li>
-              <li>
-                <a href="#">Collagen</a>
-              </li>
-              <li>
-                <a href="#">Günlük Vitamin Paketi</a>
-              </li>
-              <li>
-                <a href="#">ZMA</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="protein-page-footer-copyright">
-          Copyright © - Tüm Hakları Saklıdır.
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer hideRatingSection={true} />
     </div>
   );
 };

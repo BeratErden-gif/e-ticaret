@@ -8,12 +8,22 @@ import CartSidebar from "../Cart/CartSidebar";
 
 const Header: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   return (
     <div>
       <header className="protein-header">
         <div className="protein-header-content">
+          <button
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Menü"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
             <img src={logo} alt="OJS Nutrition" className="protein-logo" />
           </div>
@@ -63,6 +73,39 @@ const Header: React.FC = () => {
           </a>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <img src={logo} alt="OJS Nutrition" className="protein-logo" />
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Kapat"
+          >
+            ×
+          </button>
+        </div>
+        <div className="mobile-menu-links">
+          <a href="/protein" onClick={() => setIsMobileMenuOpen(false)}>PROTEİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SPOR GIDALARI</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SAĞLIK</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>GIDA</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>VİTAMİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>TÜM ÜRÜNLER</a>
+        </div>
+        <div className="mobile-menu-bottom">
+          <a href="/account" onClick={() => setIsMobileMenuOpen(false)}>HESABIM</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>MÜŞTERİ YORUMLARI</a>
+          <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>İLETİŞİM</a>
+        </div>
+      </div>
 
       <InfoBar />
     </div>

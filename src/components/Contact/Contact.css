@@ -89,12 +89,39 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .protein-nav-content {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .protein-nav-content {
+    gap: 40px;
+  }
+  .protein-nav-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .protein-nav-content {
+    gap: 20px;
+  }
+  .protein-nav-link {
+    font-size: 11px;
+  }
 }
 
 .contact-form {
   max-width: 1200px;
   margin: 60px auto;
   text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .contact-form h1 {
@@ -109,9 +136,16 @@
 }
 
 .form-row {
-  display: flex;
-  gap: 20px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 30px;
   margin-bottom: 20px;
+}
+
+.form-row .form-input {
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .form-input {
@@ -121,6 +155,7 @@
   border-radius: 4px;
   font-size: 14px;
   background: #f8f8f8;
+  box-sizing: border-box;
 }
 
 .form-textarea {
@@ -156,4 +191,25 @@
 
 .contact-info p {
   margin-bottom: 10px;
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 0 16px;
+    margin: 40px auto;
+  }
+}
+
+/* Mobil responsive */
+@media screen and (max-width: 768px) {
+  .contact-form .form-row {
+    display: block !important;
+  }
+
+  .contact-form .form-row .form-input {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 16px;
+  }
 }

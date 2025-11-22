@@ -12,3 +12,23 @@
   object-fit: cover;
   display: block;
 }
+
+/* Desktop ve tablet'te normal görsel */
+.desktop-banner {
+  display: block;
+}
+
+.mobile-banner {
+  display: none;
+}
+
+/* Mobilde yeşil görsel */
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none;
+  }
+
+  .mobile-banner {
+    display: block;
+  }
+}

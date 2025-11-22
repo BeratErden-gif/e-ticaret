@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Contact/Contact.css";
+import "../Header/Header.css";
 import "./FAQ.css";
 import logo from "../../assets/logo.svg";
 import CartSidebar from "../Cart/CartSidebar";
 import InfoBar from "../InfoBar/InfoBar";
+import Footer from "../Footer/Footer";
 import type { FAQItem } from "../../types/faq";
 
 const navLinks = [
@@ -110,6 +112,7 @@ const mockFAQs: FAQItem[] = [
 
 const FAQ: React.FC = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("Genel");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [faqs, setFaqs] = useState<FAQItem[]>([]);
@@ -149,6 +152,15 @@ const FAQ: React.FC = () => {
       {/* Header */}
       <header className="protein-header">
         <div className="protein-header-content">
+          <button
+            className="hamburger-menu"
+            onClick={() => setIsMobileMenuOpen(true)}
+            aria-label="Menü"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <div onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
             <img src={logo} alt="OJS Nutrition" className="protein-logo" />
           </div>
@@ -157,12 +169,17 @@ const FAQ: React.FC = () => {
             <button type="submit">ARA</button>
           </form>
           <div className="protein-actions">
-            <button className="protein-account">HESAP</button>
+            <a href="/account" className="protein-account">HESAP</a>
             <button
               className="protein-cart"
               onClick={() => setIsCartOpen(true)}
             >
-              SEPET
+              <svg className="cart-icon" viewBox="0 0 24 24" fill="none" stroke="#4169e1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              <span className="cart-text">SEPET</span>
               <span className="protein-cart-count">0</span>
             </button>
             <CartSidebar
@@ -173,6 +190,39 @@ const FAQ: React.FC = () => {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <img src={logo} alt="OJS Nutrition" className="protein-logo" />
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-label="Kapat"
+          >
+            ×
+          </button>
+        </div>
+        <div className="mobile-menu-links">
+          <a href="/protein" onClick={() => setIsMobileMenuOpen(false)}>PROTEİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SPOR GIDALARI</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>SAĞLIK</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>GIDA</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>VİTAMİN</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>TÜM ÜRÜNLER</a>
+        </div>
+        <div className="mobile-menu-bottom">
+          <a href="/account" onClick={() => setIsMobileMenuOpen(false)}>HESABIM</a>
+          <a href="#" onClick={() => setIsMobileMenuOpen(false)}>MÜŞTERİ YORUMLARI</a>
+          <a href="/contact" onClick={() => setIsMobileMenuOpen(false)}>İLETİŞİM</a>
+        </div>
+      </div>
 
       {/* Navigation */}
       <nav className="protein-nav">
@@ -186,6 +236,13 @@ const FAQ: React.FC = () => {
       </nav>
 
       <InfoBar />
+
+      {/* Mobile Search */}
+      <div className="mobile-search-container">
+        <div className="mobile-search">
+          <input type="text" placeholder="Aradığınız ürünü yazınız" />
+        </div>
+      </div>
 
       {/* FAQ Content */}
       <div className="faq-container">
@@ -230,6 +287,33 @@ const FAQ: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Contact Form */}
+      <div className="contact-form">
+        <h1>Bize Ulaşın</h1>
+        <p>Bize aşağıdaki iletişim ulaşabilirsiniz.</p>
+
+        <div className="form-row">
+          <input type="text" className="form-input" placeholder="İsim *" />
+          <input type="text" className="form-input" placeholder="Soyad" />
+        </div>
+
+        <input
+          type="email"
+          className="form-input"
+          placeholder="E-Posta"
+          style={{ width: "100%", marginBottom: "20px", boxSizing: "border-box" }}
+        />
+
+        <textarea className="form-textarea" placeholder="Mesaj"></textarea>
+
+        <button type="submit" className="submit-button">
+          GÖNDER
+        </button>
+      </div>
+
+      {/* Footer */}
+      <Footer hideRatingSection={true} />
     </div>
   );
 };

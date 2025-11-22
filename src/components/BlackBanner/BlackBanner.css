@@ -8,8 +8,7 @@
 
 @media (max-width: 768px) {
   .black-banner {
-    padding: 32px 16px;
-    text-align: left;
+    display: none;
   }
   
   .banner-content {

@@ -89,6 +89,31 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .protein-nav-content {
+    gap: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .protein-nav-content {
+    gap: 40px;
+  }
+  .protein-nav-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 850px) {
+  .protein-nav-content {
+    gap: 20px;
+  }
+  .protein-nav-link {
+    font-size: 11px;
+  }
 }
 
 .protein-grid {
@@ -98,6 +123,22 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 0 20px;
+}
+
+/* Tablet: 3 sütun */
+@media (max-width: 1024px) {
+  .protein-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobil: 2 sütun */
+@media (max-width: 768px) {
+  .protein-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 16px;
+  }
 }
 
 .protein-card {
@@ -176,12 +217,22 @@
   text-decoration: line-through;
 }
 
+.protein-page-title {
+  text-align: center;
+  font-family: 'Inter';
+  font-weight: 700;
+  font-size: 28px;
+  color: #222;
+  margin: 40px 0 30px;
+}
+
 .protein-total-products {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   font-size: 14px;
   color: #666;
+  text-align: center;
   margin-bottom: 20px;
 }
 

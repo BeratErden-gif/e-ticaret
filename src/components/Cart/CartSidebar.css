@@ -125,17 +125,57 @@
   font-size: 1rem;
 }
 
-.cart-sidebar-checkout {
-  width: 100%;
-  background-color: black;
-  color: white;
-  padding: 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s;
+
+/* Empty Cart Styles */
+.empty-cart-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
 }
 
-.cart-sidebar-checkout:hover {
-  background-color: #1a1a1a;
+.empty-cart-message {
+  font-size: 14px;
+  color: #333;
+  font-weight: 400;
+}
+
+.cart-sidebar-total-amount-right {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-left: auto;
+}
+
+.cart-sidebar-checkout {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  padding: 18px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 10px solid white;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* Mobil: Sepet tüm sayfayı kaplasın */
+@media (max-width: 768px) {
+  .cart-sidebar {
+    width: 100%;
+  }
 }

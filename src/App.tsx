@@ -22,6 +22,8 @@ import AccountInfo from "./components/AccountInfo/AccountInfo";
 import About from "./components/About/About";
 import Addresses from "./components/Addresses/Addresses";
 import Orders from "./components/Orders/Orders";
+import Checkout from "./components/Checkout/Checkout";
+import OrderDetail from "./components/OrderDetail/OrderDetail";
 
 function HomePage() {
   return (
@@ -46,7 +48,9 @@ function AppContent() {
     location.pathname === "/account-info" ||
     location.pathname === "/about" ||
     location.pathname === "/addresses" ||
-    location.pathname === "/orders"
+    location.pathname === "/orders" ||
+    location.pathname === "/checkout" ||
+    location.pathname.startsWith("/order/")
   ) {
     if (location.pathname === "/contact") return <Contact />;
     if (location.pathname === "/faq") return <FAQ />;
@@ -55,6 +59,8 @@ function AppContent() {
     if (location.pathname === "/about") return <About />;
     if (location.pathname === "/addresses") return <Addresses />;
     if (location.pathname === "/orders") return <Orders />;
+    if (location.pathname === "/checkout") return <Checkout />;
+    if (location.pathname.startsWith("/order/")) return <OrderDetail />;
   }
 
   if (location.pathname === "/protein") {
@@ -67,16 +73,18 @@ function AppContent() {
     );
   }
 
+  const isHomePage = location.pathname === "/";
+
   return (
     <div className="w-full overflow-x-hidden">
+      <Header />
       <div className="w-full md:container md:max-w-[768px] md:mx-auto">
-        <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
-        <Footer />
       </div>
+      <Footer hideRatingSection={!isHomePage} />
     </div>
   );
 }

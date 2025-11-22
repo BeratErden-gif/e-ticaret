@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Reviews.css";
 
 const Reviews: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const reviews = [
     {
       date: "03/05/24",
@@ -29,6 +31,14 @@ const Reviews: React.FC = () => {
     },
   ];
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+  };
+
   return (
     <div className="reviews-container">
       <div className="reviews-header">
@@ -53,12 +63,12 @@ const Reviews: React.FC = () => {
           </div>
           <span className="review-count">198453 Yorum</span>
           <div className="nav-buttons">
-            <button className="nav-button prev" aria-label="Önceki">
+            <button className="nav-button prev" aria-label="Önceki" onClick={handlePrev}>
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
                 <path d="M9 1L1 9L9 17" stroke="#56575F" strokeWidth="2" />
               </svg>
             </button>
-            <button className="nav-button next" aria-label="Sonraki">
+            <button className="nav-button next" aria-label="Sonraki" onClick={handleNext}>
               <svg width="10" height="18" viewBox="0 0 10 18" fill="none">
                 <path d="M1 1L9 9L1 17" stroke="#56575F" strokeWidth="2" />
               </svg>
@@ -66,7 +76,9 @@ const Reviews: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="reviews-list">
+
+      {/* Desktop görünüm - tüm yorumlar */}
+      <div className="reviews-list desktop-reviews">
         {reviews.map((review, index) => (
           <div key={index} className="review-card">
             <span className="review-date">{review.date}</span>
@@ -74,6 +86,24 @@ const Reviews: React.FC = () => {
             <p className="review-content">{review.content}</p>
           </div>
         ))}
+      </div>
+
+      {/* Mobil görünüm - tek yorum slider */}
+      <div className="reviews-slider mobile-reviews">
+        <div className="review-card">
+          <span className="review-date">{reviews[currentIndex].date}</span>
+          <h3 className="review-title">{reviews[currentIndex].title}</h3>
+          <p className="review-content">{reviews[currentIndex].content}</p>
+        </div>
+        <div className="slider-dots">
+          {reviews.map((_, index) => (
+            <span
+              key={index}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
+              onClick={() => setCurrentIndex(index)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -144,6 +144,37 @@
   text-rendering: geometricPrecision;
 }
 
+/* Mobile slider - varsayılan olarak gizli */
+.mobile-reviews {
+  display: none;
+}
+
+/* Desktop görünüm - varsayılan olarak göster */
+.desktop-reviews {
+  display: flex !important;
+}
+
+/* Slider dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.slider-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E3E3E3;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider-dots .dot.active {
+  background: #4F4F4F;
+}
+
 /* Mobil görünüm (<=768px) */
 @media (max-width: 768px) {
   .reviews-container {
@@ -159,25 +190,38 @@
     height: auto;
     padding-bottom: 8px;
     box-sizing: border-box;
+    flex-wrap: wrap;
   }
 
-  .reviews-right { gap: 8px; }
-  .nav-buttons { margin-left: 8px; }
-
-  .reviews-list {
-    display: grid !important;
-    flex-direction: column !important;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    width: 100%;
-    margin: 24px 0;
+  .reviews-title {
+    font-size: 14px;
   }
 
-  .review-card {
-    flex: none !important;
+  .reviews-right {
+    gap: 6px;
+  }
+
+  .nav-buttons {
+    margin-left: 6px;
+    display: flex;
+  }
+
+  /* Desktop yorumları gizle */
+  .desktop-reviews {
+    display: none !important;
+  }
+
+  /* Mobil slider göster */
+  .mobile-reviews {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
+  .reviews-slider .review-card {
     width: 100%;
     min-height: auto;
-    padding: 16px;
+    padding: 20px;
   }
 
   .review-title { font-size: 16px; line-height: 22px; }

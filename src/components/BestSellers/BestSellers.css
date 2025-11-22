@@ -150,6 +150,11 @@
   text-decoration: none;
   border-radius: 4px;
   overflow: hidden;
+  background: #1E88E5;
+  color: #FFFFFF;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .view-all a:hover {

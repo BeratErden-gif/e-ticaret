@@ -108,4 +108,64 @@
   opacity: 0.9;
 }
 
+/* Account Layout */
+.account-layout {
+  display: flex;
+}
 
+/* Mobile Tab Navigation */
+.mobile-account-tabs {
+  display: none;
+  gap: 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.mobile-tab {
+  flex: 1;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.mobile-tab.active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .mobile-account-tabs {
+    display: flex;
+  }
+
+  .account-info-sidebar {
+    display: none;
+  }
+
+  .account-layout {
+    flex-direction: column;
+  }
+
+  .account-info-content {
+    width: 100%;
+  }
+
+  .account-info-form {
+    max-width: 100%;
+  }
+
+  .form-title {
+    display: none;
+  }
+
+  .info-bar {
+    display: none !important;
+  }
+}
